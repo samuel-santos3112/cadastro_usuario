@@ -1,53 +1,72 @@
-<!DOCTYPE hmtl>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="widht=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/static/style.css">
-        <link rel="stylesheet" href="/static/alert.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
-        <title>Sistema de monitoramento com câmera</title>
-    </head>
-    <body>
-        <div class="container-fluid" id="container2">
-            {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                        <div class="alert alert-primary" role="alert">
-                            {% for message in messages %}
-                                {{ message }}
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-            {% endwith %}
-        </div> 
-        <div class="wrapper fadeInDown">
-            <div id="formContent">
-            
-                <div class="fadeIn first">
-                
-                </div>
+<!DOCTYPE html>
+<html lang="en">
 
-                <form action="/autenticar" method="POST">
-                <input class="nome" type="text" id="nome" class="fadeIn second"name="nome" placeholder="Nome" required >
-                <input class="senha" type="password" id="senha" class="fadeIn third" name="senha" placeholder="Senha" required>
-                <input type="submit" class="fadeIn fourth" value="Entrar">
-                </form>
-            
-             
-                <div id="formFooter">
-                    <a href="">Criar conta</a>
-                </div>
-            
-            </div>
-            
-        </div>
+<head>
 
-        <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/popper.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-        <script type="text/javascript" src="/static/main.js"></script>
-        
-    </body>
+  <title>Sistema de monitoramento com câmera</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/static/css/simple-sidebar.css" rel="stylesheet">
+  <style>p.alinha{padding-left: 1.8em }</style>
+
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Menu</div>
+      <div class="list-group list-group-flush">
+        <a href="{{url_for('login')}}" class="list-group-item list-group-item-action bg-light">Login</a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+            <nav class="nav" aria-label="breadcrumb" style=" padding-top: 20px; padding-left: 20px;">
+                    <ol class="nav">
+                        <li class="breadcrumb-item active">Página Inicial</li>
+                        <li class="breadcrumb-item" aria-current="page"><a href="{{url_for('stream')}}">Vídeo Stream</a></li>
+                    </ol>
+            </nav>
+
+      <div class="container-fluid">
+        <h1 class="mt-4" style="text-align: center;">Monitoramento com Câmera IP</h1>
+      </br></br>
+        <p align="justify">&emsp;&emsp;&emsp; A internet das coisas (IoT) já está presente em nossas vidas e nós sequer percebemos: eletrodomésticos que coletam e enviam informações, sensores de portas para controlar horários de chegada e saída dos filhos e dispositivos de som e calor acionados remotamente são algumas das tecnologias que já estão no mercado. Se por um lado elas oferecem conforto e praticidade, por outro também podem oferecer maior segurança a empresa e locais de grande fluxo de pessoas. Podem ainda, ser aplicadas a condomínios e nas próprias residências, reforçando outros métodos de mitigação de riscos.</p>
+        <p align="justify">&emsp;&emsp;&emsp; Os tradicionais sistemas de monitoramento por câmeras já podem ser operados via internet das coisas. As câmeras captam as imagens e transmitem-nas para uma central de inteligência via internet, sem necessidade de cabeamentos e infraestruturas de alto custo.</p>
+        <p  align="justify">&emsp;&emsp;&emsp; Essa tecnologia facilita muito a implementação ou expansão de sistemas de monitoramento, permitindo ainda que os dispositivos de captura de imagens sejam realocados sempre que necessários.</p>
+    </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/popper.min.js"></script>
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+
 </html>

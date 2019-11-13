@@ -1,0 +1,11 @@
+.row {
+    align: center;
+    margin-top: 7%;
+}
+.img {
+    -webkit-user-select: none; 
+    margin: auto;
+    width : 640;
+    height : 480;
+}
+
