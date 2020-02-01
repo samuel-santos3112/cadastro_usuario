@@ -1,6 +1,6 @@
 O projeto foi feito em Python 3.6.7.
 
-#Crie um ambiente virtual pra não ter que instalar tudo na sua máquina, esses comandos são do linux porém
+# Crie um ambiente virtual pra não ter que instalar tudo na sua máquina, esses comandos são do linux porém
 é possível utilizalos com o terminal do git (bash)
 
 Esse é o comando pra criar o ambiente virtual com o python3, porém se ele disser que seu pc não tem virtualenv
